@@ -154,6 +154,8 @@ class Play: UIViewController {
         let ref = storageRef.child("gradient_2.png")
         backgorundImage.sd_setImage(with: ref)
         view.addSubview(textText)
+        defaults.set(levelNav, forKey: "LevelNav")
+        defaults.set(pageId, forKey: "PID")
         firstVar.layer.borderWidth = 3
         firstVar.layer.borderColor = UIColor.blue.cgColor
         secondVar.layer.borderWidth = 3
@@ -184,7 +186,6 @@ class Play: UIViewController {
        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "answerID") as! Answer
-        //navigationController?.pushViewController(vc, animated: true)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
     }
@@ -350,6 +351,12 @@ class Answer: UIViewController{
 
 class Podskazka: UIViewController{
     
+    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var lastText: UILabel!
+    @IBOutlet weak var helpText3: UILabel!
+    @IBOutlet weak var helpText2: UILabel!
+    @IBOutlet var taponView3: UITapGestureRecognizer!
+    @IBOutlet weak var helpText: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var theFirstView: UIView!
     @IBOutlet var tapOnView: UITapGestureRecognizer!
@@ -359,22 +366,33 @@ class Podskazka: UIViewController{
    @IBOutlet weak var lastHelp: UIView!
     
     override func viewDidLoad() {
+        helpText.text = "Средняя линия треугольника равна половине основания"
+        helpText2.text = "Чтобы найти вероятность нужного тебе события необходимо поделить кол-во нужных тебе событий на все события"
+        helpText3.text = "Жи-Ши пиши через И!!!"
+        lastText.text = "Здесь больше ничего нет :("
+        labelText.textColor = .blue
+        labelText.shadowColor = .black
         super.viewDidLoad()
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let ref = storageRef.child("gradient_2.png")
         backgroundImage.sd_setImage(with: ref)
-        //podskazkaShp.text = "Пифагоровы трусы - во все стороны равны"
+   
+    }
+    @IBAction func tapOnLast(_ sender: Any) {
+        UIView.transition(from: secondHelp, to: secondHelp, duration: 1, options: .transitionCurlUp, completion: nil)
     }
     @IBAction func tapOnFirst(sender: UITapGestureRecognizer){
-        UIView.transition(from: secondHelp, to: firstHelp, duration: 1, options: .transitionCurlUp, completion: nil)
-        self.view.isHidden = true
+        UIView.transition(from: firstHelp, to: firstHelp, duration: 1, options: .transitionCurlUp, completion: nil)
+        
     }
+
     @IBAction func tapOnSecond(sender: UITapGestureRecognizer){
-        UIView.transition(from: firstHelp, to: theFirstView, duration: 1, options: .transitionCurlUp, completion: nil)
+        UIView.transition(from: theFirstView, to: theFirstView, duration: 1, options: .transitionCurlUp, completion: nil)
+     
     }
     
-    
+
 }
 
 class Final: UIViewController{
@@ -504,7 +522,6 @@ extension Answer{
             }
             break
         default:
-            questionS.text = "aaaaa"
             break
         }
     }
@@ -619,9 +636,7 @@ extension Final{
                 totalScore += 1
                 thirdendingDone = !thirdendingDone
             }
-            endingsText.text = "Я помог брату с установкой необходимых ему программ. Взглянув на часы я увидел что уже совсем поздно и времени на решения своих проблем у меня не остается. Но тем не менее я был рад помочь другим людям. Надеюсь мне это зачтется в будущем."
-
-           
+            endingsText.text = "Я помог брату с <<установкой необходимых ему программ>>. Взглянув на часы я увидел что уже совсем поздно и времени на решения своих проблем у меня не остается. Но тем не менее я был рад помочь другим людям. Надеюсь мне это зачтется в будущем."
             break
         case 300:
             if fourthendingDone == false{
@@ -629,7 +644,6 @@ extension Final{
                 fourthendingDone = !fourthendingDone
             }
             endingsText.text = "Вирус был успешно удален с компьютера Кати. Она угостила меня чаем с вкусняшками и проводила до подьъезда. Я поехал домой, с грустью осознавая, что не помог другим людям сегодня и не успел решить свои проблемы. Тем не менее мою душу грела перспектива налаживания моей личной жизни."
-        
             break
         default:
             break
@@ -643,8 +657,7 @@ extension Final{
 
 class Statistics: UIViewController{
  
-    
-    @IBOutlet weak var easterEggs: UILabel!
+
     @IBOutlet weak var wrongAnswers: UILabel!
     @IBOutlet weak var cleanProgress: UIButton!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -659,16 +672,14 @@ class Statistics: UIViewController{
         let ref = storageRef.child("gradient_2.png")
         backgroundImage.sd_setImage(with: ref)
         wrongAnswers.updateID(to: wrongAnswer)
-        easterEggs.updateLevel(to: levelNav)
         wrongAnswers.textColor = .blue
         wrongAnswers.shadowColor = .black
         wrongAnswers.textAlignment = .center
         myScore.textColor = .blue
         myScore.shadowColor = .black
         myScore.textAlignment = .center
-        easterEggs.textColor = .blue
-        easterEggs.shadowColor = .black
-        easterEggs.textAlignment = .center
+        cleanProgress.layer.borderWidth = 3
+        cleanProgress.layer.borderColor = UIColor.blue.cgColor
        
     }
     @IBAction func clerAllProgress(_ sender: Any) {
@@ -689,7 +700,7 @@ class Statistics: UIViewController{
         defaults.set(fourthendingDone, forKey: "FOED")
         myScore.updateScore(to: totalScore)
         wrongAnswers.updateID(to: wrongAnswer)
-        easterEggs.updateLevel(to: levelNav)
+     
     }
 }
 
@@ -705,10 +716,6 @@ extension UILabel{
         self.text = "Кол-во ошибок: \(totalScore)"
     }
 }
-extension UILabel{
-    func updateLevel(to totalScore: Int){
-        self.text = "Пасахльные яйца: \(totalScore)/2"
-    }
-}
+
 
 
