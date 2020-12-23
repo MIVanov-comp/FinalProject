@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,13 @@
 		FA25C94A257FC3AB0018D568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA25C949257FC3AB0018D568 /* Assets.xcassets */; };
 		FA25C94D257FC3AB0018D568 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA25C94B257FC3AB0018D568 /* LaunchScreen.storyboard */; };
 		FAE2030C2588D8B7009C92A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE2030B2588D8B7009C92A0 /* GoogleService-Info.plist */; };
+		FAF98B6725935C550038632B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B6625935C550038632B /* GameViewController.swift */; };
+		FAF98B6A25935CDE0038632B /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B6925935CDE0038632B /* AnswerViewController.swift */; };
+		FAF98B6D25935DED0038632B /* PodskazkaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B6C25935DED0038632B /* PodskazkaViewController.swift */; };
+		FAF98B7025935E480038632B /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B6F25935E480038632B /* StatisticsViewController.swift */; };
+		FAF98B7325935E9F0038632B /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B7225935E9F0038632B /* FinalViewController.swift */; };
+		FAF98B7625935EAD0038632B /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B7525935EAD0038632B /* TextExtensions.swift */; };
+		FAF98B7925935EE50038632B /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF98B7825935EE50038632B /* ReadyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		FA25C94C257FC3AB0018D568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA25C94E257FC3AB0018D568 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE2030B2588D8B7009C92A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAF98B6625935C550038632B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FAF98B6925935CDE0038632B /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		FAF98B6C25935DED0038632B /* PodskazkaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodskazkaViewController.swift; sourceTree = "<group>"; };
+		FAF98B6F25935E480038632B /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		FAF98B7225935E9F0038632B /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		FAF98B7525935EAD0038632B /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
+		FAF98B7825935EE50038632B /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +64,6 @@
 				E24F4CE0E909CE10193F691F /* Pods-FinalProject.debug.xcconfig */,
 				73AE26A5325E1BCD8256EEC7 /* Pods-FinalProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +104,13 @@
 				FA25C949257FC3AB0018D568 /* Assets.xcassets */,
 				FA25C94B257FC3AB0018D568 /* LaunchScreen.storyboard */,
 				FA25C94E257FC3AB0018D568 /* Info.plist */,
+				FAF98B6625935C550038632B /* GameViewController.swift */,
+				FAF98B6925935CDE0038632B /* AnswerViewController.swift */,
+				FAF98B6C25935DED0038632B /* PodskazkaViewController.swift */,
+				FAF98B6F25935E480038632B /* StatisticsViewController.swift */,
+				FAF98B7225935E9F0038632B /* FinalViewController.swift */,
+				FAF98B7525935EAD0038632B /* TextExtensions.swift */,
+				FAF98B7825935EE50038632B /* ReadyViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -210,9 +230,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF98B7925935EE50038632B /* ReadyViewController.swift in Sources */,
+				FAF98B6725935C550038632B /* GameViewController.swift in Sources */,
+				FAF98B7625935EAD0038632B /* TextExtensions.swift in Sources */,
+				FAF98B6D25935DED0038632B /* PodskazkaViewController.swift in Sources */,
 				FA25C945257FC3AA0018D568 /* ViewController.swift in Sources */,
+				FAF98B6A25935CDE0038632B /* AnswerViewController.swift in Sources */,
 				FA25C941257FC3AA0018D568 /* AppDelegate.swift in Sources */,
+				FAF98B7325935E9F0038632B /* FinalViewController.swift in Sources */,
 				FA25C943257FC3AA0018D568 /* SceneDelegate.swift in Sources */,
+				FAF98B7025935E480038632B /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
