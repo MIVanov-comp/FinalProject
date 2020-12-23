@@ -37,6 +37,7 @@ class GameViewController: UIViewController {
         textText.textColor = .blue
         textText.shadowColor = .black
         textText.textAlignment = .center
+        defaults.set(wrongAnswer, forKey: "WA")
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let ref = storageRef.child("gradient_2.png")
@@ -51,6 +52,7 @@ class GameViewController: UIViewController {
         defaults.set(levelNav, forKey: "LevelNav")
         defaults.set(pageId, forKey: "PID")
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setDesign()

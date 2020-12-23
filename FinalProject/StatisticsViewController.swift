@@ -53,6 +53,7 @@ class StatisticsViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         setDesign()
+        totalScore = defaults.integer(forKey: "TS")
     }
     func saveAll(){
         defaults.set(totalScore,forKey: "TS")

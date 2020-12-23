@@ -62,7 +62,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setAllThings()
         setDesign()
-        
     }
    
     @IBAction func playG(_ sender: UIButton) {

@@ -252,7 +252,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backinMenu:" destination="Otg-Sf-up4" eventType="touchUpInside" id="jkj-7Z-ja9"/>
-                                    <action selector="setZero:" destination="Otg-Sf-up4" eventType="touchUpInside" id="8hR-yF-gl3"/>
                                     <segue destination="JyN-mm-0uU" kind="presentation" modalPresentationStyle="fullScreen" id="jtu-lk-FKl"/>
                                 </connections>
                             </button>
@@ -725,7 +724,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="06H-W9-Zeb"/>
+        <segue reference="jtu-lk-FKl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondarySystemGroupedBackgroundColor">

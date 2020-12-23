@@ -188,8 +188,8 @@ extension FinalViewController{
                 firstendingDone = !firstendingDone
             }
             endingsText.text = "Все свое свободное время я решил посвятить решению задач предстоящего экзамена. Я так увлекся, что совсем забыл о том, что завтра биология и мне надо сдать конспект по изученной теме. Полученная двойка никак не омрачила меня, так как экзамен я сдал на высокий балл."
-        
-            break
+            
+           break
         case 120:
             if secondendingDone == false{
                 totalScore += 1

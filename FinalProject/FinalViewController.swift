@@ -42,6 +42,8 @@ class FinalViewController: UIViewController{
         secondendingDone = defaults.bool(forKey: "SED")
         thirdendingDone = defaults.bool(forKey: "TED")
         fourthendingDone = defaults.bool(forKey: "FOED")
+        totalScore = defaults.integer(forKey: "TS")
+        wrongAnswer = defaults.integer(forKey: "WA")
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let ref = storageRef.child("gradient_2.png")
@@ -53,7 +55,7 @@ class FinalViewController: UIViewController{
         super.viewDidLoad()
         setDesign()
         view.addSubview(endingsText)
-     
+  
         NSLayoutConstraint.activate([
             endingsText.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor,constant: 70),
             endingsText.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
@@ -70,15 +72,14 @@ class FinalViewController: UIViewController{
         defaults.set(thirdendingDone, forKey: "TED")
         defaults.set(fourthendingDone, forKey: "FOED")
     }
-    @IBAction func setZero(_ sender: Any) {
-        levelNav = 0
-        pageId = 0
-        saveAll()
-    }
+
     
     
     @IBAction func backinMenu(_ sender: Any) {
-      
+        levelNav = 0
+        pageId = 0
+        saveAll()
+        print(totalScore)
     }
 }
 
